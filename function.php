@@ -1,14 +1,14 @@
 <?php
 
 function config_database(){
-	$database["servername"] = "mysql.hostinger.vn";
-	$database["username"] = "u728458842_root";
-	$database["password"] = "dunghoj123";
-	$database["dbname"] = "u728458842_prod";
+	$database["servername"] = "localhost";
+	$database["username"] = "root";
+	$database["password"] = "";
+	$database["dbname"] = "androids";
 	return $database;
 }
 
-function insert($sql) {
+function query($sql) {
 	$database = config_database();
 	// Create connection
 	$conn = mysqli_connect($database["servername"], $database["username"], $database["password"], $database["dbname"]);
@@ -25,4 +25,9 @@ function insert($sql) {
 	}
 	$conn->close();
 	return $result;
+}
+
+function location($link) {
+	header('Location: '.$link);
+	exit();
 }

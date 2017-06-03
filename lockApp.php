@@ -1,9 +1,9 @@
 <?php
 include("function.php");
-if(isset($_GET["sdt"])){
-	$sdt = $_GET["sdt"];
+if(isset($_GET["iccid"])){
+	$iccid = $_GET["iccid"];
 } else {
-	$sdt = "000-000-000";
+	$iccid = "000-000-000";
 }
 $database = config_database();
 // Create connection
@@ -13,7 +13,7 @@ $conn = mysqli_connect($database["servername"], $database["username"], $database
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT users.id,users.active FROM users WHERE users.sdt='".$sdt."' LIMIT 0,1";
+$sql = "SELECT users.id,users.active FROM users WHERE users.iccid='".$iccid."' LIMIT 0,1";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -24,8 +24,8 @@ if (mysqli_num_rows($result) > 0) {
 } else {
 	date_default_timezone_set("Asia/Ho_Chi_Minh");
     $time = date("Y-m-d h:i:s");
-	$query_insert = "INSERT INTO `users`(`sdt`,`active`,`created`, `modified`) VALUES ('".$sdt."',1,'".$time."','".$time."');";
-	$res = insert($query_insert);
+	$query_insert = "INSERT INTO `users`(`iccid`,`active`,`created`, `modified`) VALUES ('".$iccid."',1,'".$time."','".$time."');";
+	$res = query($query_insert);
     if ($res) {
 		$result2 = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result2) > 0) {
