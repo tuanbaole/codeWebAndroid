@@ -21,4 +21,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     	$res = query($sql);
    }
 }
-location("manager.php");
+location("index.php");

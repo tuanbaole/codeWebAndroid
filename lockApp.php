@@ -24,7 +24,9 @@ if (mysqli_num_rows($result) > 0) {
 } else {
 	date_default_timezone_set("Asia/Ho_Chi_Minh");
     $time = date("Y-m-d h:i:s");
-	$query_insert = "INSERT INTO `users`(`iccid`,`active`,`created`, `modified`) VALUES ('".$iccid."',1,'".$time."','".$time."');";
+    $today = date("Y-m-d");
+	$query_insert = "INSERT INTO `users`(`iccid`,`active`,`ngaydangki`,`created`, `modified`) 
+	VALUES ('".$iccid."',1,'".$today."','".$time."','".$time."');";
 	$res = query($query_insert);
     if ($res) {
 		$result2 = mysqli_query($conn, $sql);

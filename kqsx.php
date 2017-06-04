@@ -10,8 +10,7 @@ if(isset($_GET["date"])){
 		if (($hours == 18 && $min > 32) || $hours >= 19 ) {
 			// khong co gi xay ra
 		} else {
-		    	$date = strtotime($date);
-			$date = strtotime("+10 day", $date);
+			$date = date('m-d-Y',strtotime($today . "+1 days"));
 		}
 	}
 } else {
