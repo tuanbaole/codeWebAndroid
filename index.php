@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <?php include 'function.php'; ?> 
 <html>
 <head>
@@ -117,7 +121,11 @@
   </div>
   <!-- Modal -->
     <div class="container-fluid">
-      <?php include 'customer.php'; ?>
+      <?php if (isset($_SESSION["username"])): ?>
+        <?php include 'customer.php'; ?>
+      <?php else : ?>
+        <?php include 'login.php'; ?>
+      <?php endif ?>
     </div>
 
     <script src="js/index.js"></script>
