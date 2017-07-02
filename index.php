@@ -56,6 +56,12 @@ session_start();
               <label for="giatien">Giá Tiền</label>
               <input type="number" class="form-control" id="giatien" placeholder="Giá Tiền" name="giatien" step="0.01" required>
             </div>
+
+            <div class="form-group">
+              <label for="giatien">Ngày</label>
+              <input type="date" class="form-control" id="datepicker1" placeholder="Hạn sử dụng" name="hsd" required>
+            </div>
+
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="vip" id="vip"> Vip
@@ -104,6 +110,10 @@ session_start();
               <label for="giatien">Giá Tiền</label>
               <input type="number" class="form-control" id="giatien" placeholder="Giá Tiền" name="giatien" step="0.01" required>
             </div>
+              <div class="form-group">
+              <label for="giatien">Ngày</label>
+              <input type="date" class="form-control" id="datepicker2" placeholder="Hạn sử dụng" name="hsd" required>
+            </div>
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="vip" id="vip"> Vip
@@ -127,7 +137,6 @@ session_start();
         <?php include 'login.php'; ?>
       <?php endif ?>
     </div>
-
     <script src="js/index.js"></script>
   </body>
 </html>
