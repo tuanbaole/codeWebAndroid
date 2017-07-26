@@ -1,32 +1,9 @@
-<?php
-// Start the session
-session_start();
-?>
+<?php session_start(); ?>
 <?php include 'function.php'; ?> 
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Quản Lý Khách Hàng</title>
-	<link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/dashboard.css" rel="stylesheet">
-	<script src="bootstrap-3.3.7/jquery/jquery.js"></script>
-	<script type="text/javascript" src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
-</head>
+<?php include 'include/header.php'; ?> 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-      </div>
-    </nav>
-
+  <?php include 'include/menu_index.php'; ?> 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">

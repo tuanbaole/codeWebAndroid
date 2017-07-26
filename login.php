@@ -6,5 +6,12 @@
       <input type="password" placeholder="password" name="pass"/>
       <button>login</button>
     </form>
+    <span class="row">
+      <a href="quenmatkhau.php">Quên mật khẩu ?</a>
+    </span>
+    <?php if (isset($_GET["thongbao"])): ?>
+    	<?php echo "Sai tên đăng nhật hoặc mật khẩu không đúng."; ?>
+    <?php endif ?>
+    <span></span>
   </div>
 </div>

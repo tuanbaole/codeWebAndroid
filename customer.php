@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-sm-12">
-      <h1 class="page-header">
+      <!-- <h1 class="page-header">
         <button class="btn btn-primary" id="addCustomer">Thêm Khách Hàng Mới</button>
-      </h1>
+      </h1> -->
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
@@ -20,16 +20,18 @@
             </tr>
           </thead>
           <tbody>
-          	<?php 
-          		$database = config_database();
-
+    	<?php 
+    		$database = config_database();
 				// Create connection
 				$conn = mysqli_connect($database["servername"], $database["username"], $database["password"], $database["dbname"]);
 				// Check connection
 				if (!$conn) {
 				    die("Connection failed: " . mysqli_connect_error());
 				}
-				$sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM users WHERE LENGTH(`iccid`) > 19";
+        if (isset($_POST["timImei"])) {
+          $sql = "SELECT * FROM `users` WHERE LENGTH(`iccid`) > 19 AND `iccid` LIKE '%".$_POST["timImei"]."%'";
+        }
 				$result = mysqli_query($conn, $sql);
 
 				if (mysqli_num_rows($result) > 0) {
