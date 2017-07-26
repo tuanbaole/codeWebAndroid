@@ -1,20 +1,20 @@
 <?php
 
-// function config_database(){
-// 	$database["servername"] = "mysql.hostinger.vn";
-// 	$database["username"] = "u728458842_root";
-// 	$database["password"] = "dunghoj123";
-// 	$database["dbname"] = "u728458842_prod";
-// 	return $database;
-// }
-
 function config_database(){
-	$database["servername"] = "localhost";
-	$database["username"] = "root";
-	$database["password"] = "";
-	$database["dbname"] = "androids";
+	$database["servername"] = "mysql.hostinger.vn";
+	$database["username"] = "u728458842_root";
+	$database["password"] = "dunghoj123";
+	$database["dbname"] = "u728458842_prod";
 	return $database;
 }
+
+// function config_database(){
+// 	$database["servername"] = "localhost";
+// 	$database["username"] = "root";
+// 	$database["password"] = "";
+// 	$database["dbname"] = "androids";
+// 	return $database;
+// }
 
 function query($sql) {
 	$database = config_database();
