@@ -17,9 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     	date_default_timezone_set("Asia/Ho_Chi_Minh");
     	$today = date("Y-m-d");
     	$time = date("Y-m-d h:i:s");
-    	$sql = "INSERT INTO `users`(`iccid`,`sdt`,`ten`,`diachi`,`gia`,`ngaydangki`,`created`, `modified`) 
-    	VALUES ('".$iccid."','".$sdt."','".$ten."','".$diachi."','".$giatien."','".$dangki."','".$time."','".$time."');";
-    	$res = query($sql);
+      $nguoigioithieu = "admin";
+      if (isset($_SESSION["username"])) {
+          $nguoigioithieu = $_SESSION["username"];
+      }
+    	$sql = "INSERT INTO `users`(`iccid`,`sdt`,`ten`,`diachi`,`gia`,`ngaydangki`,`nguoigioithieu`,`created`, `modified`) 
+    	VALUES ('".$iccid."','".$sdt."','".$ten."','".$diachi."','".$giatien."','".$dangki."','".$nguoigioithieu."','".$time."','".$time."');";
+    	var_dump($sql);
+      $res = query($sql);
    }
 }
 location("index.php");

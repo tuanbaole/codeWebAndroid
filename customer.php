@@ -15,6 +15,7 @@
               <th>VIP</th>
               <th>GIÁ</th>
               <th>ACTIVE</th>
+              <th>NgườiĐK</th>
               <th>ĐĂNGKÍ</th>
               <th>Tùy Chọn</th>
             </tr>
@@ -28,9 +29,9 @@
 				if (!$conn) {
 				    die("Connection failed: " . mysqli_connect_error());
 				}
-        $sql = "SELECT * FROM users WHERE LENGTH(`iccid`) > 19";
-        if (isset($_POST["timImei"])) {
-          $sql = "SELECT * FROM `users` WHERE LENGTH(`iccid`) > 19 AND `iccid` LIKE '%".$_POST["timImei"]."%'";
+        $sql = "SELECT * FROM users WHERE nguoigioithieu IS NOT NULL ";
+        if (isset($_POST["timImei"]) && $_POST["timImei"] != "") {
+          $sql = "SELECT * FROM `users` WHERE `iccid` LIKE '%".$_POST["timImei"]."%'";
         }
 				$result = mysqli_query($conn, $sql);
 
@@ -60,6 +61,7 @@
                         echo "<button class=\"btn btn-primary active\" value=\"".$row["id"]."\"  ><i class=\"glyphicon glyphicon-play\"></i></button>";
                       }
                       ?></td>
+                      <td><?php echo $row["nguoigioithieu"]; ?></td>
 		                  <td><?php echo $row["ngaydangki"]; ?></td>
 		                  <td>
 		                  	<a href="" class="btn btn-primary myBtn" value="<?php echo $row["id"]; ?>"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -70,9 +72,7 @@
 		                  </td>
 		                </tr>
 				    <?php }
-				} else {
 				}
-
 				mysqli_close($conn);
           	?>
           </tbody>

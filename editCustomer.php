@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "function.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    	if (isset($_POST["id"]) && isset($_POST["sdt"]) && isset($_POST["ten"]) 
@@ -15,10 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     		$vip = 0;
     	}
     	date_default_timezone_set("Asia/Ho_Chi_Minh");
-    	// $today = date("Y-m-d");
+        $nguoigioithieu = "admin";
+    	if (isset($_SESSION["username"])) {
+            $nguoigioithieu = $_SESSION["username"];
+        }
     	$sql = "UPDATE `users` SET `sdt`='".$sdt."',`ten`='".$ten."',`diachi`='".$diachi."',`vip`='".$vip."',
-    	`gia`='".$giatien."', `ngaydangki`='".$dangki."' WHERE id=".$id;
-        var_dump($sql);
+    	`gia`='".$giatien."', `ngaydangki`='".$dangki."' , `nguoigioithieu`='".$nguoigioithieu."' WHERE id=".$id;
     	$res = query($sql);
     }
 }
