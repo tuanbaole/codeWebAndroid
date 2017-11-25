@@ -15,7 +15,6 @@ $arrContextOptions=array(
 
 $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
 $first_step = explode( "id=\"result_mb\">" , $response );
-
 if (count($first_step) == 2) {
 	$second_step = explode( "<table" , $first_step[1] );
 	$three_step = explode( "h2>" , $second_step[1] );
@@ -23,12 +22,12 @@ if (count($first_step) == 2) {
 	$replace2 = array("kq","kq","kq","kq","kq","kq","kq","kq");
 	$arr_three_step = str_replace($find1,$replace2,$three_step[1]);
 	$showVal = explode("kq" , $arr_three_step );
+	$ngayfix = explode("ngày",trim(strip_tags($showVal[0])));
 	if (count($showVal) >=8) {
 		for ($i=0; $i <= 8; $i++) { 
 			switch ($i) {
 				case 0:
-					$stringDay = explode(" ",trim(strip_tags($showVal[$i])));
-					$ketqua["link"][] = end($stringDay);
+					$ketqua["link"][] = substr(trim($ngayfix[1]), 0, 10);
 					break;
 				case 1:
 				case 2:
@@ -67,92 +66,13 @@ if (count($first_step) == 2) {
 	$ketqua["link"][] = "";
 	$ketqua["ketqua"][] = false;
 }
- 
-// $data = file_get_contents('http://www.xskt.com.vn/rss-feed/mien-bac-xsmb.rss');
-// $xml_source = str_replace(array("&amp;", "&"), array("&", "&amp;"), $data);
-// $xml = simplexml_load_string($xml_source);
-// $find = array("ĐB:","1:","2:","3:","4:","5:","6:","7:");
-// $replace = array("kq","kq","kq","kq","kq","kq","kq","kq");
-// foreach($xml->channel->item as $child)
-// {
-// 	$title = $child->title;
-// 	$link = pathinfo($child->link,PATHINFO_FILENAME );
-// 	$description = explode("kq",str_replace($find,$replace,$child->description));
-// 	break;
-// }
-// unset($description[0]);
-// foreach ($description as $keyGiai => $valueGiai) {
-// 	$ketqua["ketqua"][] = trim($valueGiai);
-// }
-// $ketqua["link"] = $date;
+// $ketqua["link"][] = $date;
+// $ketqua["ketqua"][] = "51627";
+// $ketqua["ketqua"][] = "81694";
+// $ketqua["ketqua"][] = "22406 - 03325";
+// $ketqua["ketqua"][] = "97493 - 52600 - 89343 - 83889 - 11197 - 17036";
+// $ketqua["ketqua"][] = "4689 - 0288 - 5341 - 9943";
+// $ketqua["ketqua"][] = "2417 - 1941 - 3604 - 9925 - 4853 - 8079";
+// $ketqua["ketqua"][] = "464 - 043 - 007";
+// $ketqua["ketqua"][] = "90 - 92 - 38 - 01";
 echo json_encode($ketqua);
-// $url = 'https://laythongtin.net/mini-content/traditional-lottery-api.php?type=json&date='.$date;
-// $content = json_decode(str_replace("bay", "that", file_get_contents($url)));
-// $kq = array();
-// $ketqua = array();
-// if (!empty($content)) {
-// 	foreach ($content as $key => $value) {
-// 		if ($value != "") {
-// 			if (strpos($key, "dac_biet") > -1) {
-// 				$kq["db"] = $value;
-// 			} else if (strpos($key, "nhat") > -1) {
-// 				$kq["nhat"] = $value;
-// 			} else if (strpos($key, "nhi") > -1) {
-// 				if (isset($kq["nhi"])) {
-// 					$kq["nhi"] .= "-" . $value;
-// 				} else {
-// 					$kq["nhi"] = $value;
-// 				}
-// 			}  else if (strpos($key, "ba") > -1) {
-// 				if (isset($kq["ba"])) {
-// 					$kq["ba"] .= "-" . $value;
-// 				} else {
-// 					$kq["ba"] = $value;
-// 				}
-// 			} else if (strpos($key, "tu") > -1) {
-// 				if (isset($kq["tu"])) {
-// 					$kq["tu"] .= "-" . $value;
-// 				} else {
-// 					$kq["tu"] = $value;
-// 				}
-// 			} else if (strpos($key, "nam") > -1) {
-// 				if (isset($kq["nam"])) {
-// 					$kq["nam"] .= "-" . $value;
-// 				} else {
-// 					$kq["nam"] = $value;
-// 				}
-// 			} else if (strpos($key, "sau") > -1) {
-// 				if (isset($kq["sau"])) {
-// 					$kq["sau"] .= "-" . $value;
-// 				} else {
-// 					$kq["sau"] = $value;
-// 				}
-// 			} else if (strpos($key, "that") > -1) {
-// 				if (isset($kq["that"])) {
-// 					$kq["that"] .= "-" . $value;
-// 				} else {
-// 					$kq["that"] = $value;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	if (!isset($kq["db"]) || !isset($kq["nhat"]) || !isset($kq["nhi"]) || !isset($kq["ba"]) || !isset($kq["tu"]) || 
-// 		!isset($kq["nam"]) || !isset($kq["sau"]) || !isset($kq["that"]) ) {
-		
-// 	} else {
-// 		$ketqua["ketqua"][] = trim($kq["db"]);
-// 		$ketqua["ketqua"][] = trim($kq["nhat"]);
-// 		$ketqua["ketqua"][] = trim($kq["nhi"]);
-// 		$ketqua["ketqua"][] = trim($kq["ba"]);
-// 		$ketqua["ketqua"][] = trim($kq["tu"]);
-// 		$ketqua["ketqua"][] = trim($kq["nam"]);
-// 		$ketqua["ketqua"][] = trim($kq["sau"]);
-// 		$ketqua["ketqua"][] = trim($kq["that"]);
-// 		$ketqua["link"][] = $date;
-// 	}
-// }
-// if(json_encode($ketqua) == "null" || empty($ketqua)) {
-// 	echo "false";
-// } else {
-// 	echo json_encode($ketqua);
-// }
