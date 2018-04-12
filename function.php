@@ -3,7 +3,7 @@
 function config_database(){
 	$database["servername"] = "mysql.hostinger.vn";
 	$database["username"] = "u728458842_root";
-	$database["password"] = "dunghoj123";
+	$database["password"] = "Dunghoj@1234";
 	$database["dbname"] = "u728458842_prod";
 	return $database;
 }

@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
     	$sql = "INSERT INTO `users`(`iccid`,`sdt`,`ten`,`diachi`,`gia`,`ngaydangki`,`nguoigioithieu`,`created`, `modified`) 
     	VALUES ('".$iccid."','".$sdt."','".$ten."','".$diachi."','".$giatien."','".$dangki."','".$nguoigioithieu."','".$time."','".$time."');";
-    	var_dump($sql);
       $res = query($sql);
    }
 }
