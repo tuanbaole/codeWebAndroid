@@ -1,20 +1,19 @@
 <?php
-
-function config_database(){
-	$database["servername"] = "mysql.hostinger.vn";
-	$database["username"] = "u728458842_root";
-	$database["password"] = "Dunghoj@1234";
-	$database["dbname"] = "u728458842_prod";
-	return $database;
-}
-
 // function config_database(){
-// 	$database["servername"] = "localhost";
-// 	$database["username"] = "root";
-// 	$database["password"] = "";
-// 	$database["dbname"] = "androids";
+// 	$database["servername"] = "https://auth-db155.hostinger.vn";
+// 	$database["username"] = "u728458842_local";
+// 	$database["password"] = "Dunghoj@1234";
+// 	$database["dbname"] = "u728458842_newdb";
 // 	return $database;
 // }
+
+function config_database(){
+	$database["servername"] = "https://103.28.36.229:2083";
+	$database["username"] = "nhlapnzz_root";
+	$database["password"] = "";
+	$database["dbname"] = "codeweb";
+	return $database;
+}
 
 function query($sql) {
 	$database = config_database();

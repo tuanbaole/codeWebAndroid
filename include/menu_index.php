@@ -13,6 +13,7 @@
     <button class="btn btn-primary navbar-btn" id="addCustomer">Thêm mới khách hàng</button>
     <ul class="nav navbar-nav navbar-right">
       <?php if ($_SESSION["username"] == "admin"): ?>
+      <li><a href="linkKqsx.php"><span class="glyphicon glyphicon-globe"></span> Link KQSX</a></li>
       <li><a href="addAccount.php"><span class="glyphicon glyphicon-plus"></span> Thêm tài khoản</a></li>
       <?php endif ?>
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION["username"]; ?></a></li>

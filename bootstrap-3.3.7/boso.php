@@ -33,22 +33,6 @@ $kihieu["dit6"][] = trim("06,16,26,36,46,56,66,76,86,96");
 $kihieu["dit7"][] = trim("07,17,27,37,47,57,67,77,87,97");
 $kihieu["dit8"][] = trim("08,18,28,38,48,58,68,78,88,98");
 $kihieu["dit9"][] = trim("09,19,29,39,49,59,69,79,89,99");
-
-$kihieu["tongbe"][] = trim($kihieu["tong0"][0].",".$kihieu["tong1"][0].",".$kihieu["tong2"][0].",".$kihieu["tong3"][0].",".$kihieu["tong4"][0]);
-$kihieu["tongto"][] = trim($kihieu["tong5"][0].",".$kihieu["tong6"][0].",".$kihieu["tong7"][0].",".$kihieu["tong8"][0].",".$kihieu["tong9"][0]);
-$kihieu["tongle"][] = trim($kihieu["tong1"][0].",".$kihieu["tong3"][0].",".$kihieu["tong5"][0].",".$kihieu["tong7"][0].",".$kihieu["tong9"][0]);
-$kihieu["tongchal"][] = trim($kihieu["tong0"][0].",".$kihieu["tong2"][0].",".$kihieu["tong4"][0].",".$kihieu["tong6"][0].",".$kihieu["tong8"][0]);
-
-$kihieu["daube"][] = trim($kihieu["dau0"][0].",".$kihieu["dau1"][0].",".$kihieu["dau2"][0].",".$kihieu["dau3"][0].",".$kihieu["dau4"][0]);
-$kihieu["dauto"][] = trim($kihieu["dau5"][0].",".$kihieu["dau6"][0].",".$kihieu["dau7"][0].",".$kihieu["dau8"][0].",".$kihieu["dau9"][0]);
-$kihieu["daule"][] = trim($kihieu["dau1"][0].",".$kihieu["dau3"][0].",".$kihieu["dau5"][0].",".$kihieu["dau7"][0].",".$kihieu["dau9"][0]);
-$kihieu["dauchal"][] = trim($kihieu["dau0"][0].",".$kihieu["dau2"][0].",".$kihieu["dau4"][0].",".$kihieu["dau6"][0].",".$kihieu["dau8"][0]);
-
-$kihieu["ditbe"][] = trim($kihieu["dit0"][0].",".$kihieu["dit1"][0].",".$kihieu["dit2"][0].",".$kihieu["dit3"][0].",".$kihieu["dit4"][0]);
-$kihieu["ditto"][] = trim($kihieu["dit5"][0].",".$kihieu["dit6"][0].",".$kihieu["dit7"][0].",".$kihieu["dit8"][0].",".$kihieu["dit9"][0]);
-$kihieu["ditle"][] = trim($kihieu["dit1"][0].",".$kihieu["dit3"][0].",".$kihieu["dit5"][0].",".$kihieu["dit7"][0].",".$kihieu["dit9"][0]);
-$kihieu["ditchal"][] = trim($kihieu["dit0"][0].",".$kihieu["dit2"][0].",".$kihieu["dit4"][0].",".$kihieu["dit6"][0].",".$kihieu["dit8"][0]);
-
 function getBo($string)
 {
 	foreach (explode(',', $string) as $key => $value) {
@@ -162,9 +146,9 @@ $kihieu["lhoto"][] = trim("05,06,07,08,09,15,16,17,18,19,25,26,27,28,29,35,36,37
 
 $kihieu["tolho"][] = trim("90,91,92,93,94,80,81,82,83,84,70,71,72,73,74,60,61,62,63,64,50,51,52,53,54");
 
-$kihieu["kepbalg"][] =  $kihieu["cepbalg"][] = $kihieu["cepb"][] = trim("00,11,22,33,44,55,66,77,88,99");
+$kihieu["kepbalg"][] =  $kihieu["cepbalg"][] = trim("00,11,22,33,44,55,66,77,88,99");
 
-$kihieu["keplech"][] = $kihieu["ceplech"][] = $kihieu["cepl"][] = trim("05,50,16,61,27,72,38,83,49,94");
+$kihieu["keplech"][] = $kihieu["ceplech"][] = trim("05,50,16,61,27,72,38,83,49,94");
 
 $kihieu["satkep"][] = $kihieu["satcep"][] = trim("12,21,23,32,34,43,45,54,56,65,67,76,78,87,89,98,01,10");
 
