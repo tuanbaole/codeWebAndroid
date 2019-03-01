@@ -29,9 +29,9 @@
 				if (!$conn) {
 				    die("Connection failed: " . mysqli_connect_error());
 				}
-        $sql = "SELECT * FROM users WHERE nguoigioithieu IS NOT NULL ORDER BY `users`.`ngaydangki` DESC";
+        $sql = "SELECT * FROM users WHERE nguoigioithieu IS NOT NULL ";
         if (isset($_POST["timImei"]) && $_POST["timImei"] != "") {
-          $sql = "SELECT * FROM `users` WHERE `iccid` LIKE '%".$_POST["timImei"]."%' ORDER BY `users`.`ngaydangki` DESC";
+          $sql = "SELECT * FROM `users` WHERE `iccid` LIKE '%".$_POST["timImei"]."%'";
         }
 				$result = mysqli_query($conn, $sql);
 

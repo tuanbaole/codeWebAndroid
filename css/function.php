@@ -1,17 +1,18 @@
 <?php
+
 function config_database(){
-	$database["servername"] = "localhost";
-	$database["username"] = "root";
-	$database["password"] = "";
-	$database["dbname"] = "codeweb";
+	$database["servername"] = "mysql.hostinger.vn";
+	$database["username"] = "u728458842_root";
+	$database["password"] = "Dunghoj@223";
+	$database["dbname"] = "u728458842_prod";
 	return $database;
 }
 
 // function config_database(){
-// 	$database["servername"] = "https://103.28.36.229:2083";
-// 	$database["username"] = "nhlapnzz_root";
+// 	$database["servername"] = "localhost";
+// 	$database["username"] = "root";
 // 	$database["password"] = "";
-// 	$database["dbname"] = "codeweb";
+// 	$database["dbname"] = "androids";
 // 	return $database;
 // }
 
